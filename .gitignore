@@ -1,0 +1,12 @@
+db.sqlite3
+
+__pycache__/
+
+migrations/
+
+venv2/
+
+*.pyc
+
+settings.py
+

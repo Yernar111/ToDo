@@ -1,0 +1,15 @@
+<p>Log In</p>
+<form (ngSubmit)="logIn1()" #form="ngForm">
+    <label for="name">User name:</label><br>
+    <input type="text" name="name" [(ngModel)]="name" required><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" name="password" [(ngModel)]="password" required><br><br>
+
+    <input type="submit" value="Log In">
+</form> <br><br>
+
+@if (isError){
+    <p>Error, check if the username and password are correct.</p>
+}
+

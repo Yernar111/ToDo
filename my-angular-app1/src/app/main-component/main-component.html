@@ -1,0 +1,11 @@
+<button (click)="logout()">Log Out</button> <br>
+<p>ToDo</p>
+
+<input [(ngModel)]="newTask" placeholder="New Task">
+<button (click)="addTask()">Add</button>
+
+<div *ngFor="let i of task1$ | async" id="task">
+    <input type="checkbox" [checked]="i.is_done" (change)="toggleTask(i)">
+    <span [style.text-decoration]="i.is_done ? 'line-through' : 'none'">{{ i.description}}</span>
+    <div id="delete" (click)="deleteTask(i.id)"></div>
+</div>
