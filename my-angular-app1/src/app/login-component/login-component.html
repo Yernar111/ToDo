@@ -1,4 +1,4 @@
-<p>Log In</p>
+<!-- <p>Log In</p>
 <form (ngSubmit)="logIn1()" #form="ngForm">
     <label for="name">User name:</label><br>
     <input type="text" name="name" [(ngModel)]="name" required><br>
@@ -11,5 +11,32 @@
 
 @if (isError){
     <p>Error, check if the username and password are correct.</p>
-}
+} -->
+
+<div class="auth-container">
+  <div class="form-wrapper">
+    <h2>Welcome back</h2>
+    <p class="subtitle">Log in to your account</p>
+
+    <form (ngSubmit)="logIn1()" #form="ngForm" class="auth-form">
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" [(ngModel)]="name" required placeholder="Enter your name">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" [(ngModel)]="password" required placeholder="••••••••">
+      </div>
+
+      <button type="submit" [disabled]="!form.valid" class="submit-btn login">Log In</button>
+    </form>
+
+    @if (isError) {
+      <div class="error-message">
+        <span class="icon">❌</span> Incorrect name or password
+      </div>
+    }
+  </div>
+</div>
 

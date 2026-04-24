@@ -1,4 +1,4 @@
-<button (click)="logout()">Log Out</button> <br>
+<!-- <button (click)="logout()">Log Out</button> <br>
 <p>ToDo</p>
 
 <input [(ngModel)]="newTask" placeholder="New Task">
@@ -8,4 +8,36 @@
     <input type="checkbox" [checked]="i.is_done" (change)="toggleTask(i)">
     <span [style.text-decoration]="i.is_done ? 'line-through' : 'none'">{{ i.description}}</span>
     <div id="delete" (click)="deleteTask(i.id)"></div>
+</div> -->
+
+<div class="todo-page">
+  <header class="header">
+    <span class="logo">MyTasks</span>
+    <button class="logout-btn" (click)="logout()">Log Out</button>
+  </header>
+
+  <main class="main-content">
+    <h1>ToDo</h1>
+
+    <div class="add-task-box">
+      <input [(ngModel)]="newTask" placeholder="New Task" (keyup.enter)="addTask()">
+      <button class="add-btn" (click)="addTask()">Add</button>
+    </div>
+
+    <div class="task-list">
+      <div *ngFor="let i of task1$ | async" class="task-card" [class.completed]="i.is_done">
+        <div class="task-left">
+          <label class="checkbox-container">
+            <input type="checkbox" [checked]="i.is_done" (change)="toggleTask(i)">
+            <span class="checkmark"></span>
+          </label>
+          <span class="task-text">{{ i.description }}</span>
+        </div>
+        
+        <div id="delete" class="delete-icon" (click)="deleteTask(i.id)">
+          &times;
+        </div>
+      </div>
+    </div>
+  </main>
 </div>

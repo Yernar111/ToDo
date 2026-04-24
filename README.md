@@ -2,14 +2,24 @@
 
 ## Description
 
-Simple web application for handling tasks(with registration and account system)
-
-Each user can log in or sign up and handle it's own tasks(each users tasks are saved in DB server). Registration is custom and provided without hashing passwords. 
+Simple web application for handling tasks
 
 ## Technologies:
 
-Backend: Django + Django Rest Framework
+**Backend:**
+* **Language:** Python
+* **Framework:** Django
+* **DataBase:** PostgreSQL
 
-Frontend: Angular
+**Frontend:**
+* **Framework:** Angular
+* **Styles:** CSS
+* **State handling:** RxJS
 
-Database server: PostgreSQL
+## Features
+- Custom registration and account system(password are not hashed)
+- Handling tasks: adding/deleting
+- Each user has it's own tasks which are saved in database
+
+
+![alt text](<Снимок экрана 2026-04-24 221139.png>)
